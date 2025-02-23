@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jay Jayanti - Software Engineering Portfolio</title>
+    <title>Jay Jayanti - Engineering Portfolio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
@@ -17,195 +17,386 @@
         }
 
         .header-custom {
-            background-color: var(--primary-color);
+            background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
             color: white;
-            border-radius: 8px;
+            border-radius: 10px;
         }
-
         .section-custom {
-            background-color: #f8f9fa;
+            background: white;
             border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-
         .section-title {
-            color: var(--secondary-color);
-            border-bottom: 2px solid var(--accent-color);
+            border-bottom: 2px solid #e0e0e0;
+            color: #1a237e;
         }
-
-        .job-title {
-            color: var(--secondary-color);
-            font-weight: bold;
-        }
-
-        .date {
-            color: var(--accent-color);
-        }
-
         .skill-badge {
-            background-color: var(--accent-color);
-            color: white;
-            font-size: 0.9em;
+            background-color: #e3f2fd;
+            color: #1565c0;
+            font-weight: normal;
+            padding: 0.5rem 1rem;
         }
+        .job-title {
+            color: #1976d2;
+        }
+        .date {
+            color: #546e7a;
+        }
+        .publication-card {
+            border-left: 4px solid #007bff;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background-color: #f8f9fa;
+        }
+        .publication-title { color: #2c3e50; font-weight: 600; }
+        .publication-authors { color: #34495e; font-style: italic; }
+        .publication-venue { color: #7f8c8d; }
+        .publication-link { color: #3498db; }
     </style>
 </head>
 <body class="bg-light">
     <div class="container py-4">
-        <header class="header-custom text-center p-5 mb-4">
-            <h1 class="display-4">Subramaniam (Jay) Jayanti</h1>
-            <div class="d-flex justify-content-center gap-4 flex-wrap mt-3">
-                <a href="https://www.linkedin.com/in/jayantis/" class="text-white text-decoration-none" target="_blank">
-                    <i class="bi bi-linkedin"></i> LinkedIn
-                </a>
-                <a href="https://github.com/jaySJ" class="text-white text-decoration-none" target="_blank">
-                    <i class="bi bi-github"></i> Github
-                </a>
-            </div>
-        </header>
-
+        <div class="container py-4" id="main-content"></div>
+        
         <section class="section-custom p-4 mb-4">
-            <h2 class="section-title pb-2 mb-4">Experience</h2>
-            
-            <div class="mb-4">
-                <div class="d-flex justify-content-between flex-wrap">
-                    <h3 class="job-title h5">Lead Software Engineer @ Chromatic 3D Materials</h3>
-                    <span class="date">October 2023 - Present</span>
-                </div>
-                <p class="text-muted">Golden Valley, MN</p>
-                <ul class="list-unstyled">
-                    <li class="mb-2">• Designed and implemented end-to-end desktop slicer software for reactive extrusion 3D printing</li>
-                    <li class="mb-2">• Deployed computer vision-based process monitoring and control system</li>
-                    <li class="mb-2">• Implemented fast 3D scanning solution for large parts that produces an STL file for comparison</li>
-                </ul>
-                <div class="d-flex flex-wrap gap-2">
-                    <span class="badge skill-badge">Python</span>
-                    <span class="badge skill-badge">OpenCV</span>
-                    <span class="badge skill-badge">Open3D</span>
-                    <span class="badge skill-badge">AWS</span>
-                    <span class="badge skill-badge">YOLOv8</span>
-                    <span class="badge skill-badge">OpenCascade</span>
-                </div>
+            <div class="container py-5">
+                <h1 class="mb-4">Publications</h1>
+                <div class="accordion" id="publicationsAccordion"></div>
             </div>
-
-            <div class="mb-4">
-                <div class="d-flex justify-content-between flex-wrap">
-                    <h3 class="job-title h5">Engineering Manager, Platform @ nTopology Inc</h3>
-                    <span class="date">August 2021 - September 2023</span>
-                </div>
-                <p class="text-muted">New York, NY (Remote)</p>
-                <ul class="list-unstyled">
-                    <li class="mb-2">• Managed team of 5+ software engineers building next-generation platform</li>
-                    <li class="mb-2">• Developed and executed quarterly team R&D roadmaps</li>
-                    <li class="mb-2">• Led technical discussions and contributed with hands-on coding</li>
-                </ul>
-                <div class="d-flex flex-wrap gap-2">
-                    <span class="badge skill-badge">C++</span>
-                    <span class="badge skill-badge">Python</span>
-                    <span class="badge skill-badge">Team Leadership</span>
-                    <span class="badge skill-badge">CI/CD</span>
-                </div>
-            </div>
-
-            <div class="mb-4">
-                <div class="d-flex justify-content-between flex-wrap">
-                    <h3 class="job-title h5">Staff Software Engineer @ Stratasys Inc</h3>
-                    <span class="date">November 2014 - July 2021</span>
-                </div>
-                <p class="text-muted">Eden Prairie, MN</p>
-                <ul class="list-unstyled">
-                    <li class="mb-2">• Technical lead on algorithms and architecture-focused projects</li>
-                    <li class="mb-2">• Rewrote core graphics engine using shader-based OpenGL 4 API</li>
-                    <li class="mb-2">• Implemented industry-first features in Insight and GrabCAD Print software</li>
-                </ul>
-                <div class="d-flex flex-wrap gap-2">
-                    <span class="badge skill-badge">C++</span>
-                    <span class="badge skill-badge">C#</span>
-                    <span class="badge skill-badge">OpenGL</span>
-                    <span class="badge skill-badge">Technical Leadership</span>
-                </div>
-            </div>
-        </section>
-
-        <div class="mb-4">
-            <div class="d-flex justify-content-between flex-wrap">
-                <h3 class="job-title h5">Reviewer for Journal of Computer Aided Design </h3>
-                <span class="date">August 2006 - Present</span>
-            </div>
-            <p class="text-muted">Elsevier (Remote)</p>
-            <ul class="list-unstyled">
-                <li class="mb-2">• Voluntarily reviewed research papers for the publication </li>
-            </ul>
-            <div class="d-flex flex-wrap gap-2">
-                <span class="badge skill-badge">Computational Geometry / CAD</span>
-                <span class="badge skill-badge">Machine learning and information retrieval topics</span>
-                <span class="badge skill-badge">Research methodology</span>
-                <span class="badge skill-badge">Scientific communications</span>
-            </div>
-        </div>
-
-        <section class="section-custom p-4 mb-4">
-            <h2 class="section-title pb-2 mb-4">Education</h2>
-            <div class="mb-4">
-                <div class="d-flex justify-content-between flex-wrap">
-                    <h3 class="job-title h5">PhD @ Purdue University</h3>
-                    <span class="date">2001 - 2006</span>
-                </div>
-                <p>Research in information retrieval for CAD databases based on shape similarity</p>
-            </div>
-
-            <div class="mb-4">
-                <div class="d-flex justify-content-between flex-wrap">
-                    <h3 class="job-title h5">M.S.E @ Purdue University</h3>
-                    <span class="date">1999 - 2001</span>
-                </div>
-                <p>Fatigue life prediction of airframe structures using artificial neural networks and particle swarm optimization</p>
-            </div>
-        </section>
-
-        <section class="section-custom p-4 mb-4">
-            <h2 class="section-title pb-2 mb-4">Technical Skills</h2>
-            <div class="d-flex flex-wrap gap-2">
-                <span class="badge skill-badge">C++</span>
-                <span class="badge skill-badge">Python</span>
-                <span class="badge skill-badge">JavaScript</span>
-                <span class="badge skill-badge">Node.js</span>
-                <span class="badge skill-badge">MongoDB</span>
-                <span class="badge skill-badge">CUDA</span>
-                <span class="badge skill-badge">C#/.NET</span>
-                <span class="badge skill-badge">OpenGL</span>
-                <span class="badge skill-badge">OpenCV</span>
-                <span class="badge skill-badge">PyTorch</span>
-                <span class="badge skill-badge">Open3D</span>
-                <span class="badge skill-badge">MATLAB</span>
-                <span class="badge skill-badge">Computer Graphics</span>
-                <span class="badge skill-badge">Machine Learning</span>
-                <span class="badge skill-badge">Image Processing</span>
-                <span class="badge skill-badge">CAD/CAM</span>
-            </div>
-        </section>
-
-        <section class="section-custom p-4 mb-4">
-            <h2 class="section-title pb-2 mb-4">Awards & Accomplishments</h2>
-            <ul class="list-unstyled">
-                <li class="mb-2">• 3 patents granted on software for information retrieval, design and manufacturing</li>
-                <l1 class="mb-2">• 1 patent pending on process control software for 3D printing using computer vision</li>
-                <li class="mb-2">• Secured and managed $3 million NIST-funded technology development project</li>
-                <li class="mb-2">• Most Highly Cited Paper Award, Journal of Computer-aided Design, 2008 & 2009</li>
-                <li class="mb-2">• Aydin Ungan Best Graduate Student in ME Dept. at Purdue University</li>
-            </ul>
-        </section>
-
-        <section class="section-custom p-4 mb-4">
-            <h2 class="section-title pb-2 mb-4">Projects</h2>
-            <ul class="list-unstyled">
-                <li class="mb-2">ChromaPrint : An end-to-end slicer application for RX-AM 3D printing that activates and monitors a vision-based control system</li>
-                <li class="mb-2">ChromaVision : A near-real-time vision-based control system for RX-AM 3D printer</li>
-                <li class="mb-2">ChromaScan : A fast 3D scanning solution for large parts using a laser line scanner and point-cloud based stitching algorithm</li>
-                <li class="mb-2">Rewrote core graphics engine using shader-based OpenGL 4 API</li>
-                <li class="mb-2">Implemented highly-parallel physics-based machining simulation in CUDA to achieve 60X improvement in performance.</li>
-                <li class="mb-2">Developed a novel algorithm for 3D printing that reduces material usage by 30% while maintaining strength and porosity reqiurements</li>
-            </ul>
         </section>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const publications = {
+            2013: [
+                {
+                    title: "Predictive Modeling for Tool Deflection and Part Distortion of Large Machined Components",
+                    authors: "Jayanti, S., Ren, D., Erickson, E., Elangovan, H., and Marusich, T.",
+                    venue: "Procedia CIRP 12:37–42, December 2013",
+                    link: "https://www.researchgate.net/publication/259172632_Predictive_Modeling_for_Tool_Deflection_and_Part_Distortion_of_Large_Machined_Components"
+                },
+                {
+                    title: "A High Performance Computing Cloud Computing Environment for Machining Simulations",
+                    authors: "Man, X., Usui, S., Jayanti, S., Teo, L., Marusich, T.",
+                    venue: "Procedia CIRP 8:57-62, December 2013",
+                    link: "https://www.researchgate.net/publication/273536309_A_High_Performance_Computing_Cloud_Computing_Environment_for_Machining_Simulations"
+                }
+            ],
+            2012: [
+                {
+                    title: "Modeling of Cutting Forces and Cycle Times for Micromachined Components",
+                    authors: "Jayanti, S., et. al.",
+                    venue: "Proceedings CIRP 1(1):138–143, December 2012",
+                    link: "257745385_Modeling_of_Cutting_Forces_and_Cycle_Times_for_Micromachined_Components"
+                }
+            ],
+            2009: [
+                {
+                    title: "Shape-based clustering for 3D CAD objects: A comparative study of effectiveness",
+                    authors: "Subramaniam Jayanti, Yagnanarayanan Kalyanaraman, Karthik Ramani",
+                    venue: "Computer-Aided Design, 2009"
+                }
+            ],
+            2007: [
+                {
+                    title: "Navigation and Discovery in 3D CAD Repositories",
+                    authors: "Jiantao Pu, Yagnanarayanan Kalyanaraman, Subramaniam Jayanti, Karthik Ramani, Zygmunt Pizlo",
+                    venue: "IEEE Computer Graphics and Applications, 2007"
+                }
+            ],
+            2006: [
+                {
+                    title: "Developing an engineering shape benchmark for CAD models",
+                    authors: "Subramaniam Jayanti, Yagnanarayanan Kalyanaraman, Natraj Iyer, Karthik Ramani",
+                    venue: "Computer-Aided Design, 2006",
+                    link: "https://www.sciencedirect.com/science/article/abs/pii/S001044850600100X"
+                }
+            ],
+            2005: [
+                {
+                    title: "Three-dimensional shape searching: state-of-the-art review and future trends",
+                    authors: "Natraj Iyer, Subramaniam Jayanti, Kuiyang Lou, Yagnanarayanan Kalyanaraman, Karthik Ramani",
+                    venue: "Computer-Aided Design, 2005"
+                },
+                {
+                    title: "Shape-based searching for product lifecycle applications",
+                    authors: "Natraj Iyer, Subramaniam Jayanti, Kuiyang Lou, Yagnanarayanan Kalyanaraman, Karthik Ramani",
+                    venue: "Computer-Aided Design, 2005"
+                }
+            ],
+            2003: [
+                {
+                    title: "Structural Integrity Redesign Through Neural-Network Inverse Mapping",
+                    authors: "Pidaparti, R.M., Jayanti, S., Mukhopadhyay, S., Palakal, M.J.",
+                    venue: "AIAA Journal 41(1):119-124, January 2003"
+                },
+                {
+                    title: "Corrosion Fatigue Through Particle Swarm Optimization",
+                    authors: "Pidaparti, R. M., Jayanti, S.",
+                    venue: "AIAA Journal, Vol. 41, No. 6, pp. 1167-1171, 2003",
+                    link: "https://arc.aiaa.org/doi/abs/10.2514/2.2060?journalCode=aiaaj"
+                }
+            ],
+            2002: [
+                {
+                    title: "Classification, Distribution, and Fatigue Life of Pitting Corrosion for Aircraft Materials",
+                    authors: "R. M. Pidaparti, S. Jayanti, C. A. Sowers, M. J. Palakal",
+                    venue: "Journal of Aircraft, Vol. 39, No. 3, May-June 2002",
+                    link: "https://arc.aiaa.org/doi/10.2514/2.2954"
+                }
+            ]
+        };
+
+        function createPublicationCard(pub) {
+            return `
+                <div class="publication-card">
+                    <div class="publication-title">${pub.title}</div>
+                    <div class="publication-authors">${pub.authors}</div>
+                    <div class="publication-venue">${pub.venue}</div>
+                    ${pub.link ? `<a href="${pub.link}" class="publication-link">View Publication</a>` : ''}
+                </div>
+            `;
+        }
+
+        function createAccordionItem(year, pubs, isFirst) {
+            return `
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button ${!isFirst ? 'collapsed' : ''}" 
+                                type="button" 
+                                data-bs-toggle="collapse" 
+                                data-bs-target="#collapse${year}">
+                            ${year}
+                        </button>
+                    </h2>
+                    <div id="collapse${year}" 
+                        class="accordion-collapse collapse ${isFirst ? 'show' : ''}" 
+                        data-bs-parent="#publicationsAccordion">
+                        <div class="accordion-body">
+                            ${pubs.map(pub => createPublicationCard(pub)).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        const portfolioData = {
+            header: {
+                name: "Subramaniam (Jay) Jayanti",
+                links: [
+                    { url: "https://www.linkedin.com/in/jayantis/", icon: "bi-linkedin", text: "LinkedIn" },
+                    { url: "https://github.com/jaySJ", icon: "bi-github", text: "Github" }
+                ]
+            },
+            experience: [
+                {
+                    title: "Lead Software Engineer @ Chromatic 3D Materials",
+                    location: "Golden Valley, MN",
+                    date: "October 2023 - Present",
+                    responsibilities: [
+                        "Designed and implemented end-to-end desktop slicer software for reactive extrusion 3D printing",
+                        "Deployed computer vision-based process monitoring and control system",
+                        "Implemented fast 3D scanning solution for large parts that produces an STL file for comparison"
+                    ],
+                    skills: ["Python", "OpenCV", "Open3D", "AWS", "YOLOv8", "OpenCascade"]
+                },
+                {
+                    title: "Engineering Manager, Platform @ nTopology Inc",
+                    location: "New York, NY (Remote)",
+                    date: "August 2021 - September 2023",
+                    responsibilities: [
+                        "Managed team of 5+ software engineers building next-generation platform",
+                        "Developed and executed quarterly team R&D roadmaps",
+                        "Led technical discussions and contributed with hands-on coding"
+                    ],
+                    skills: ["C++", "Python", "Team Leadership", "CI/CD"]
+                },
+                {
+                    title: "Staff Software Engineer @ Stratasys Inc",
+                    location: "Eden Prairie, MN",
+                    date: "November 2014 - July 2021",
+                    responsibilities: [
+                        "Technical lead on algorithms and architecture-focused projects",
+                        "Rewrote core graphics engine using shader-based OpenGL 4 API",
+                        "Implemented industry-first features in Insight and GrabCAD Print software"
+                    ],
+                    skills: ["C++", "C#", "OpenGL", "Technical Leadership"]
+                },
+                {
+                    title: "Reviewer for Journal of Computer Aided Design",
+                    location: "Elsevier (Remote)",
+                    date: "August 2006 - Present",
+                    responsibilities: [
+                        "Voluntarily reviewed research papers for the publication"
+                    ],
+                    skills: ["Computational Geometry / CAD", "Machine learning and information retrieval topics", "Research methodology", "Scientific communications"]
+                }
+            ],
+            education: [
+                {
+                    degree: "PhD @ Purdue University",
+                    date: "2001 - 2006",
+                    description: "Research in information retrieval for CAD databases based on shape and topological graph similarity"
+                },
+                {
+                    degree: "M.S.E @ Purdue University",
+                    date: "1999 - 2001",
+                    description: "Fatigue life prediction of airframe structures using artificial neural networks and particle swarm optimization"
+                }
+            ],
+            skills: [
+                "C++", "Python",  "C#/.NET", "JavaScript", "Node.js", "MongoDB", "CUDA",
+                "OpenGL", "OpenCV", "PyTorch", "Open3D", "MATLAB", "Computer Graphics",
+                "Machine Learning", "Image Processing", "CAD/CAM"
+            ],
+            awards: [
+                "3 patents granted on software for information retrieval, design and manufacturing",
+                "1 patent pending on process control software for 3D printing using computer vision",
+                "Secured and managed $3 million NIST-funded technology development project",
+                "Most Highly Cited Paper Award, Journal of Computer-aided Design, 2008 & 2009",
+                "Aydin Ungan Best Graduate Student in ME Dept. at Purdue University"
+            ],
+            projects: [
+                "ChromaPrint : An end-to-end slicer application for RX-AM 3D printing that activates and monitors a vision-based control system",
+                "ChromaVision : A near-real-time vision-based control system for RX-AM 3D printer",
+                "ChromaScan : A fast 3D scanning solution for large parts using a laser line scanner and point-cloud based stitching algorithm",
+                "Advanced FDM : Industry-first features for multi-part, multi-material 3D printing in GrabCAD Print software",
+                "Rewrote core graphics engine using shader-based OpenGL 4 API",
+                "Implemented highly-parallel physics-based machining simulation in CUDA to achieve 60X improvement in performance.",
+                "Developed a novel algorithm for 3D printing that reduces material usage by 30% while maintaining strength and porosity reqiurements",
+            ],
+            coursework: [
+                {
+                    title: "Reinforcement Learning from Human Feedback",
+                    description: "Short online course from Google cloud and Deepleraing.ai",
+                    link: "https://learn.deeplearning.ai/accomplishments/42ac32c2-4176-42b2-8b76-503c43b3cc10?usp=sharing"
+                },
+                {
+                    title: "Fundamentals of Software Architecture",
+                    description: "Two-day course with Mark Richards",
+                    link: "https://www.developertoarchitect.com/training/architecture-fundamentals.html"
+                },
+                {
+                    title: "Intro to Networking",
+                    description: "Short online coursee with NVIDIA"
+                },
+                {
+                    title: "Reinforcement Learning from Human Feedback",
+                    link: "https://learn.deeplearning.ai/accomplishments/42ac32c2-4176-42b2-8b76-503c43b3cc10",
+                    description: "Short online coursee with Google cloud and Deepleraing.ai"
+                },
+                {
+                    title: "Multi AI Agent Systems with crewAI",
+                    link: "https://learn.deeplearning.ai/accomplishments/42ac32c2-4176-42b2-8b76-503c43b3cc10",
+                    description: "Short online coursee with crewAI"
+                },
+                {
+                    title: "Machine Learning and Data Mining",
+                    description: "Semester long graduate-level EE course with Carla Brodley (Purdue)"
+                },
+                {
+                    title: "Artificial Intelligence",
+                    description: "Semester long graduate-level CS course at Purdue University @ Indianapolis"
+                }
+            ]
+        };
+
+        function createHeader(header) {
+            return `
+                <header class="header-custom text-center p-5 mb-4">
+                    <h1 class="display-4">${header.name}</h1>
+                    <div class="d-flex justify-content-center gap-4 flex-wrap mt-3">
+                        ${header.links.map(link => `
+                            <a href="${link.url}" class="text-white text-decoration-none" target="_blank">
+                                <i class="bi ${link.icon}"></i> ${link.text}
+                            </a>
+                        `).join('')}
+                    </div>
+                </header>
+            `;
+        }
+
+        function createExperienceCard(exp) {
+            return `
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between flex-wrap">
+                        <h3 class="job-title h5">${exp.title}</h3>
+                        <span class="date">${exp.date}</span>
+                    </div>
+                    <p class="text-muted">${exp.location}</p>
+                    <ul class="list-unstyled">
+                        ${exp.responsibilities.map(resp => `<li class="mb-2">• ${resp}</li>`).join('')}
+                    </ul>
+                    <div class="d-flex flex-wrap gap-2">
+                        ${exp.skills.map(skill => `<span class="badge skill-badge">${skill}</span>`).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function createSection(title, content) {
+            return `
+                <section class="section-custom p-4 mb-4">
+                    <h2 class="section-title pb-2 mb-4">${title}</h2>
+                    ${content}
+                </section>
+            `;
+        }
+
+        function createEducationCard(edu) {
+            return `
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between flex-wrap">
+                        <h3 class="job-title h5">${edu.degree}</h3>
+                        <span class="date">${edu.date}</span>
+                    </div>
+                    <p>${edu.description}</p>
+                </div>
+            `;
+        }
+
+        function createBulletList(items) {
+            return `
+                <ul class="list-unstyled">
+                    ${items.map(item => `<li class="mb-2">• ${item}</li>`).join('')}
+                </ul>
+            `;
+        }
+
+        function createCourseworkCard(course) {
+            return `
+                <div class="mb-2">
+                    <h3 class="h6">${course.title}</h3>
+                    ${course.description ? `<p class="mb-1">${course.description}</p>` : ''}
+                    ${course.link ? `<a href="${course.link}">Link</a>` : ''}
+                </div>
+            `;
+        }
+
+        // Build the page
+        const mainContent = document.getElementById('main-content');
+
+        // Generate the accordion
+        const accordion = document.getElementById('publicationsAccordion');
+        const years = Object.keys(publications).sort((a, b) => b - a); // Sort years in descending order
+        years.forEach((year, index) => {
+            accordion.innerHTML += createAccordionItem(year, publications[year], index === 0);
+        });
+
+        mainContent.innerHTML = `
+            ${createHeader(portfolioData.header)}
+            ${createSection('Experience', portfolioData.experience.map(exp => createExperienceCard(exp)).join(''))}
+            ${createSection('Education', portfolioData.education.map(edu => createEducationCard(edu)).join(''))}
+            ${createSection('Technical Skills', `
+                <div class="d-flex flex-wrap gap-2">
+                    ${portfolioData.skills.map(skill => `<span class="badge skill-badge">${skill}</span>`).join('')}
+                </div>
+            `)}
+            ${createSection('Awards & Accomplishments', createBulletList(portfolioData.awards))}
+            ${createSection('Projects', createBulletList(portfolioData.projects))}
+            ${createSection('Graduate and Professional Coursework and Certificates', 
+                portfolioData.coursework.map(course => createCourseworkCard(course)).join(''))}
+        `;
+    </script>
 </body>
 </html>
