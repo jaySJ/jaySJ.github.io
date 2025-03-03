@@ -55,10 +55,47 @@
     </style>
 </head>
 <body class="bg-light">
-    <div class="container py-4">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid" >
+            <a class="navbar-brand" href="#">Jay Jayanti</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav" >
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#professional development">Professional Development</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#patents">Patents</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#publications">Publications</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-4 margin-top: 56px;">
         <div class="container py-4" id="main-content"></div>
-        
-        <section class="section-custom p-4 mb-4">
+        <section class="section-custom p-4 mb-4" id="patents">
+            <div class="container py-5">
+                <h1 class="mb-4">Patents</h1>
+                <div class="accordion" id="patentsAccordion"></div>
+            </div>
+        </section>
+        <section class="section-custom p-4 mb-4" id="publications">
             <div class="container py-5">
                 <h1 class="mb-4">Publications</h1>
                 <div class="accordion" id="publicationsAccordion"></div>
@@ -67,6 +104,32 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
     <script>
+        const patents = {
+            2024: [
+                {
+                    title: "Method of printing a multi-material 3D part and purge tower",
+                    link: "https://patents.justia.com/patent/20240083117"
+                }
+            ],
+            2018: [
+                {
+                    title: "Three-dimensional parts having interconnected Hollow patterns, method of manufacturing and method of producing composite part",
+                    link: "https://ppubs.uspto.gov/dirsearch-public/print/downloadBasicPdf/10093039?requestToken=eyJzdWIiOiIwYjk4ZTBmNy04ZjU5LTRkODEtYTA5Ni03NzEwNDMzZmUzMjgiLCJ2ZXIiOiJhNzFiNThiMC0wZTY0LTQxNjktYmEyOS1kMzc2ZWFhNTRiZTYiLCJleHAiOjB9"
+                }
+            ],
+            2005: [
+                {
+                    title: "Multi-tier and multi-domain distributed rapid product configuration and design system",
+                    link: "https://patents.google.com/patent/US20060020629"
+                }
+            ],
+            2004: [
+                {
+                    title: "Methods, systems, and data structures for performing searches on three dimensional objects",
+                    link: "https://patents.justia.com/patent/8429174"
+                }
+            ]
+        }
         const publications = {
             2013: [
                 {
@@ -157,8 +220,16 @@
                 </div>
             `;
         }
+        function createPatentCard(pub) {
+            return `
+                <div class="publication-card">
+                    <div class="publication-title">${pub.title}</div>
+                    ${pub.link ? `<a href="${pub.link}" class="publication-link">View Publication</a>` : ''}
+                </div>
+            `;
+        }
 
-        function createAccordionItem(year, pubs, isFirst) {
+        function createAccordionItem(year, pubs, isFirst, isPatent) {
             return `
                 <div class="accordion-item">
                     <h2 class="accordion-header">
@@ -171,9 +242,9 @@
                     </h2>
                     <div id="collapse${year}" 
                         class="accordion-collapse collapse ${isFirst ? 'show' : ''}" 
-                        data-bs-parent="#publicationsAccordion">
+                        data-bs-parent=${isPatent ? "#patentsAccordion" : "#publicationsAccordion"}>
                         <div class="accordion-body">
-                            ${pubs.map(pub => createPublicationCard(pub)).join('')}
+                            ${isPatent? pubs.map(pub => createPatentCard(pub)).join('') : pubs.map(pub => createPublicationCard(pub)).join('')}
                         </div>
                     </div>
                 </div>
@@ -223,6 +294,27 @@
                     skills: ["C++", "C#", "OpenGL", "Technical Leadership"]
                 },
                 {
+                    title: "R&D Project Manager @ Third Wave systems",
+                    location: "Eden Prairie, MN",
+                    date: "August 2013 - October 2014",
+                    responsibilities: [
+                       "Technical lead on physics-based optimization algorithms for CNC machining",
+                        "Proposal development and securing government-funded projects",
+                        "Coordination with customers and academic partners for joint research",
+                        "Customer impelemtation and support"
+                    ],
+                    skills: ["C++", "C#", "OpenGL", "Technical Leadership"]
+                },
+                {
+                    title: "Computational Mechanics Engineer @ Third Wave systems",
+                    location: "Eden Prairie, MN",
+                    date: "August 2006 - October 2013",
+                    responsibilities: [
+                        "Individual contributor and technical lead on physics-based optimization algorithms for CNC machining"
+                    ],
+                    skills: ["C++", "CAD", "Meshing", "Technical Leadership"]
+                },
+                {
                     title: "Reviewer for Journal of Computer Aided Design",
                     location: "Elsevier (Remote)",
                     date: "August 2006 - Present",
@@ -246,8 +338,12 @@
             ],
             skills: [
                 "C++", "Python",  "C#/.NET", "JavaScript", "Node.js", "MongoDB", "CUDA",
-                "OpenGL", "OpenCV", "PyTorch", "Open3D", "MATLAB", "Computer Graphics",
+                "OpenGL", "OpenCV", "PyTorch", "Open3D", "MATLAB", "Computer Graphics", "MS SQL",
                 "Machine Learning", "Image Processing", "CAD/CAM"
+            ],
+            other_skills: [
+                "Scrum", "CI/CD (Jenkins, Maven, Git)", "Cloud computing (AWS - AppStream, S3)", "JIRA", "MS Visual Studio", "VS Code",
+                "Hiring and team building", "Technical leadership", "Mentoring", "Technical writing", "Proposal writing"
             ],
             awards: [
                 "3 patents granted on software for information retrieval, design and manufacturing",
@@ -257,13 +353,39 @@
                 "Aydin Ungan Best Graduate Student in ME Dept. at Purdue University"
             ],
             projects: [
-                "ChromaPrint : An end-to-end slicer application for RX-AM 3D printing that activates and monitors a vision-based control system",
-                "ChromaVision : A near-real-time vision-based control system for RX-AM 3D printer",
-                "ChromaScan : A fast 3D scanning solution for large parts using a laser line scanner and point-cloud based stitching algorithm",
-                "Advanced FDM : Industry-first features for multi-part, multi-material 3D printing in GrabCAD Print software",
-                "Rewrote core graphics engine using shader-based OpenGL 4 API",
-                "Implemented highly-parallel physics-based machining simulation in CUDA to achieve 60X improvement in performance.",
-                "Developed a novel algorithm for 3D printing that reduces material usage by 30% while maintaining strength and porosity reqiurements",
+                {
+                    title: "ChromaPrint",
+                    description: "An end-to-end slicer application for RX-AM 3D printing that activates and monitors a vision-based control system",
+                    link: "https://www.linkedin.com/posts/c3dmaterials_billets-additivemanufacturing-3dprinting-activity-7224806454170370048-Tu4u?utm_source=share&utm_medium=member_desktop&rcm=ACoAAABQCvYB_E29jyl7evzm_8j4Qc0DklK3ayA"
+                },
+                {
+                    title: "ChromaVision",
+                    description: "A near-real-time vision-based control system for RX-AM 3D printer",
+                    link: "https://www.linkedin.com/posts/c3dmaterials_3dprinting-additivemanufacturing-computervision-activity-7221907102443659264-aE8m?utm_source=share&utm_medium=member_desktop&rcm=ACoAAABQCvYB_E29jyl7evzm_8j4Qc0DklK3ayA"
+                },
+                {
+                    title: "ChromaScan",
+                    description: "A fast 3D scanning solution for large parts using a laser line scanner and point-cloud based stitching algorithm"
+                },
+                {
+                    title: "GrabCAD Print Advanced FDM",
+                    description: "Industry-first features for multi-part, multi-material 3D printing in GrabCAD Print software",
+                    link: "https://youtu.be/jHsqjjZvP0Q?t=264"
+                },
+                {
+                    title: "Rewrote core graphics engine of Insight 4.0 software",
+                    description: "Using shader-based OpenGL 4 API while maintaining complete backward compatibility for dozens of features",
+                    link:"https://www.goengineer.com/videos/stratasys-tutorial-insight-custom-groups"
+                },
+                {
+                    title: "Highly-parallel physics-based machining simulation (TWS Production Module)",
+                    description: "Implemented in CUDA to achieve 60X improvement in performance."
+                },
+                {
+                    title: "3D view generation using DepthAnything's monocular depth estimation model (personal project)",
+                    link: "https://youtu.be/ueOiVmUy-qo"
+                }
+
             ],
             coursework: [
                 {
@@ -278,7 +400,7 @@
                 },
                 {
                     title: "Intro to Networking",
-                    description: "Short online coursee with NVIDIA"
+                    description: "Short online course with NVIDIA"
                 },
                 {
                     title: "Reinforcement Learning from Human Feedback",
@@ -336,8 +458,10 @@
 
         function createSection(title, content) {
             return `
-                <section class="section-custom p-4 mb-4">
-                    <h2 class="section-title pb-2 mb-4">${title}</h2>
+                <section class="section-custom p-4 mb-4" id="${title.toLowerCase()}"> 
+                     <div class="container py-5">
+                    <h1 class="section-title pb-2 mb-4">${title}</h1>
+                    </div>
                     ${content}
                 </section>
             `;
@@ -372,17 +496,19 @@
                 </div>
             `;
         }
+        function createProjectCard(project) {
+            return `
+                <div class="mb-2">
+                    <h3 class="h6">${project.title}</h3>
+                    ${project.description ? `<p class="mb-1">${project.description}</p>` : ''}
+                    ${project.link ? `<a href="${project.link}">Link</a>` : ''}
+                </div>
+            `;
+        }
 
         // Build the page
         const mainContent = document.getElementById('main-content');
-
-        // Generate the accordion
-        const accordion = document.getElementById('publicationsAccordion');
-        const years = Object.keys(publications).sort((a, b) => b - a); // Sort years in descending order
-        years.forEach((year, index) => {
-            accordion.innerHTML += createAccordionItem(year, publications[year], index === 0);
-        });
-
+        
         mainContent.innerHTML = `
             ${createHeader(portfolioData.header)}
             ${createSection('Experience', portfolioData.experience.map(exp => createExperienceCard(exp)).join(''))}
@@ -392,11 +518,31 @@
                     ${portfolioData.skills.map(skill => `<span class="badge skill-badge">${skill}</span>`).join('')}
                 </div>
             `)}
+            ${createSection('Other Skills', `
+                <div class="d-flex flex-wrap gap-2">
+                    ${portfolioData.other_skills.map(skill => `<span class="badge skill-badge">${skill}</span>`).join('')}
+                </div>
+            `)}
             ${createSection('Awards & Accomplishments', createBulletList(portfolioData.awards))}
-            ${createSection('Projects', createBulletList(portfolioData.projects))}
-            ${createSection('Graduate and Professional Coursework and Certificates', 
+            ${createSection('Projects', 
+            portfolioData.projects.map(project => createCourseworkCard(project)).join(''))}
+            ${createSection('Professional Development', 
                 portfolioData.coursework.map(course => createCourseworkCard(course)).join(''))}
         `;
+
+        // Generate the accordion
+        const accordion = document.getElementById('publicationsAccordion');
+        const years = Object.keys(publications).sort((a, b) => b - a); // Sort years in descending order
+        years.forEach((year, index) => {
+            accordion.innerHTML += createAccordionItem(year, publications[year], index === 0, false);
+        });
+
+        const accordion_patent = document.getElementById('patentsAccordion');
+        const years_patent = Object.keys(patents).sort((a, b) => b - a); // Sort years in descending order
+        years_patent.forEach((year, index) => {
+            accordion_patent.innerHTML += createAccordionItem(year, patents[year], index === 0, true);
+        });
+
     </script>
 </body>
 </html>
